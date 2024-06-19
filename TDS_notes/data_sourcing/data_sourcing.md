@@ -51,7 +51,7 @@ pip install beautifulsoup4 requests
 
 # Scrapping with 
 
-> ***web scraping can not alawys be legal YOU will have to go through the T&C of a webiste if site if it's somehting really IMP***
+> ***web scraping can not alawys be legal YOU will have to go through the T&C of a webiste if it's somehting really IMP***
 
 ## 1. Excel:
 
@@ -65,7 +65,7 @@ pip install beautifulsoup4 requests
 
 ## 2. Google sheets:
 
-- these foemulas will be ****live* formulas, i.e if you refresh the page, the data imported as well will eb refreshed.
+- these formulas will be ***live*** formulas, i.e if you refresh the page, the data imported as well will be refreshed.
 - `importhtml` is used in google sheets, which accepts the following parameter:
 
 1. url - the url from where the data is to be loaded
@@ -82,9 +82,9 @@ pip install beautifulsoup4 requests
 
 - it is doenne using the libraries :
 
-1. beautiful soup
-2. requests
-3. urllib
+    1. beautiful soup
+    2. requests
+    3. urllib
 
     there are other libraries as well, which can be used along with these.
 
@@ -165,4 +165,4 @@ item.querySelector(".cli-title-metadata-item:nth-child(3)")?.textContent,
 item.querySelector(".ratingGroup--imdb-rating").textContent]))
 ```
 
-- now we have got the data on the json file in the folder, we can then, manipulate it if we want.
+- now we have got the data on the json file in the folder, we can then, manipulate it if we want, maybe convert it ti .excel or .csv file.
