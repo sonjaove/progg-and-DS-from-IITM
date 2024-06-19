@@ -164,3 +164,11 @@ item.querySelector(".ratingGroup--imdb-rating").textContent]))
 ```
 
 - now we have got the data on the json file in the folder, we can then, manipulate it if we want.
+
+## 5. geocoding using geopandas and google maps API:
+- [link to the api and colab notebook](https://colab.research.google.com/drive/1-vvP-UyMjHgBqc-hdsUhm3Bsbgi7oO6g)
+- my implimentation will be somewhere in the folder(won't be much different from the one done in the colab, would be pretty much the same).
+
+## 6. using the wikipedia libraray.
+- [the colab notebook](https://colab.research.google.com/drive/1-w8Jo6xcQs2jK0NxNddPW4HVCZhXmTBe)
+- nothing else to see here.
