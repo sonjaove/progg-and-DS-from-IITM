@@ -14,10 +14,12 @@ etc........
     a sample code with beautiful soup 
 
 ```python
+#installing the dependencies.
 pip install requests
 pip install bs4
 pip install beautifulsoup4 requests
 
+#the code.
         import requests
         from bs4 import BeautifulSoup
         # URL of the page to scrape
@@ -49,7 +51,7 @@ pip install beautifulsoup4 requests
 
 # Scrapping with 
 
-> ***web scraping can not alawys be legal YOU will have to go through the T&C of a webiste if site if it's somehting really IMP***
+> ***web scraping can not alawys be legal YOU will have to go through the T&C of a webiste if it's somehting really IMP***
 
 ## 1. Excel:
 
@@ -63,7 +65,7 @@ pip install beautifulsoup4 requests
 
 ## 2. Google sheets:
 
-- these foemulas will be ****live* formulas, i.e if you refresh the page, the data imported as well will eb refreshed.
+- these formulas will be ***live*** formulas, i.e if you refresh the page, the data imported as well will be refreshed.
 - `importhtml` is used in google sheets, which accepts the following parameter:
 
 1. url - the url from where the data is to be loaded
@@ -80,9 +82,9 @@ pip install beautifulsoup4 requests
 
 - it is doenne using the libraries :
 
-1. beautiful soup
-2. requests
-3. urllib
+    1. beautiful soup
+    2. requests
+    3. urllib
 
     there are other libraries as well, which can be used along with these.
 
@@ -164,11 +166,3 @@ item.querySelector(".ratingGroup--imdb-rating").textContent]))
 ```
 
 - now we have got the data on the json file in the folder, we can then, manipulate it if we want.
-
-## 5. geocoding using geopandas and google maps API:
-- [link to the api and colab notebook](https://colab.research.google.com/drive/1-vvP-UyMjHgBqc-hdsUhm3Bsbgi7oO6g)
-- my implimentation will be somewhere in the folder(won't be much different from the one done in the colab, would be pretty much the same).
-
-## 6. using the wikipedia libraray.
-- [the colab notebook](https://colab.research.google.com/drive/1-w8Jo6xcQs2jK0NxNddPW4HVCZhXmTBe)
-- nothing else to see here.
