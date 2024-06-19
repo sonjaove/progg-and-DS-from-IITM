@@ -14,10 +14,12 @@ etc........
     a sample code with beautiful soup 
 
 ```python
+#installing the dependencies.
 pip install requests
 pip install bs4
 pip install beautifulsoup4 requests
 
+#the code.
         import requests
         from bs4 import BeautifulSoup
         # URL of the page to scrape
