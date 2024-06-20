@@ -4,6 +4,9 @@ json stands for JavaScript Object Notation, it is a lightweight data interchange
 this the simlpest way to get the data of the desired city, by simply copy pasting the url='https://www.bbc.com/weather/2643743' of that city, in this case bhopal
 and then call the get function of the requests library to get the data of the city.
 '''
+'''there is also another libraray called scrapy which is more efficeint than BeautifulSoup, it is a web crawling framework that provides a complete tool for scraping.
+but it is more complex than BeautifulSoup, it is used to extract the data from the websites, it is a high-level web crawling and web scraping framework used to crawl websites and extract structured data from their pages.
+ive implimented the code in one of the private repo.'''
 
 import requests
 import json
