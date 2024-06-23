@@ -107,13 +107,16 @@ grep "^136.243.228.193" data_apr #grep searches for regular expression - mech of
 - this is called *entity resolution* and can be done with the methodoloy of clusturing. (open refine makes it really easy to work with such data)
 
 ------------------------------------------------------------------------------------------------------------------------------------------
+
 # Pythonic libraries.
 1. `pandas_profiling` library:
 
     - used essentially for peofiling the data and giving good profile about the data, it generates an html file for a particular dataset 
     ```python
+    # to downlaod the library
     pip install pandas_profiling
 
+    #for generating the report.
     from pandas_profiling import ProfileReport 
 
     prof=ProfileReport(df)
@@ -121,7 +124,46 @@ grep "^136.243.228.193" data_apr #grep searches for regular expression - mech of
     files.download('report.html')
     ```
 
-    these lines of code generate a pretty good report of the data at hand, showing correlation b/w the variables and trends in the data.
+    these lines of code generate a pretty good report of the data at hand, showing correlation b/w the variables and trends in the data and outliers, also gives warnings.
+
+2. `pillow` library:
+
+    - makes the image porcessing easy, just write a script for the images and the changes in the images will be done. 
+
+    - it can alos be pretty useful for data visulaization. 
+    ```python
+    # for installing the library
+    pip install Pillow #this does it, but you might need some external libraries as well, incase an error accures during installation.
+
+    from PIL import Image #or any other module you want to exp with.
+    
+    # Open an image file
+    image = Image.open('path/to/image.jpg')
+
+    # Display basic information about the image
+    print(f"Image format: {image.format}")
+    print(f"Image size: {image.size}")
+    print(f"Image mode: {image.mode}")
+
+    # Resize the image
+    resized_image = image.resize((800, 600))
+
+    # Save the resized image
+    resized_image.save('path/to/resized_image.jpg')
+
+    # Convert the image to grayscale
+    grayscale_image = image.convert('L')
+
+    # Save the grayscale image
+    grayscale_image.save('path/to/grayscale_image.jpg')
+
+    # Rotate the image by 90 degrees
+    rotated_image = image.rotate(90)
+
+    # Save the rotated image
+    rotated_image.save('path/to/rotated_image.jpg')
+    ```
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 # References:
@@ -147,3 +189,7 @@ pdftotext -layout gujarat-2013.pdf gujarat-2013.txt
 - learn about regular expressions.
 
 - [a small discussion on github about entity resolution.](https://github.com/topics/entity-resolution)
+
+- [Pillow documentation](https://pillow.readthedocs.io/en/stable/installation/basic-installation.html)
+
+- [AirFlow Doc](https://airflow.apache.org/docs/apache-airflow/stable/)
