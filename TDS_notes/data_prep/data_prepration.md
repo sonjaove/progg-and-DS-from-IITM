@@ -86,7 +86,42 @@ grep "^136.243.228.193" data_apr #grep searches for regular expression - mech of
 
 ```
 
+- [notebook which does a fair job at explaining things.](https://colab.research.google.com/drive/1KSFkQDK0v__XWaAaHKeQuIAwYV0dkTe8)
+------------------------------------------------------------------------------------------------------------------------------------------
 
+# text editor 
+
+- ctrl+shift+p - for fomatting a jason file, as vs code can identify the formates like these.
+
+- ctrl + d =  multi-select 
+
+- [a brief video](https://youtu.be/99lYu43L9uM?si=c1dEnA7wKx3F8vtF)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# Using OpenRefine.
+
+- the election results problem as seen on the first video on data prepration section, can be solved using open refine, which is an open source software.
+    - eg, XYZ and XYZ. Ltd refer to the same company but, a machine would read it as 2 seprate entities.
+
+- this is called *entity resolution* and can be done with the methodoloy of clusturing. (open refine makes it really easy to work with such data)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+# Pythonic libraries.
+1. `pandas_profiling` library:
+
+    - used essentially for peofiling the data and giving good profile about the data, it generates an html file for a particular dataset 
+    ```python
+    pip install pandas_profiling
+
+    from pandas_profiling import ProfileReport 
+
+    prof=ProfileReport(df)
+    prof.to_file('report.html')
+    files.download('report.html')
+    ```
+
+    these lines of code generate a pretty good report of the data at hand, showing correlation b/w the variables and trends in the data.
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 # References:
@@ -110,3 +145,5 @@ pdftotext -layout gujarat-2013.pdf gujarat-2013.txt
     | 127.0.0.1   | -                               | frank            | [10/Oct/2000:13:55:36 -0700]   | "GET /apache_pb.gif HTTP/1.0"       | 200         | 2326       |
 
 - learn about regular expressions.
+
+- [a small discussion on github about entity resolution.](https://github.com/topics/entity-resolution)
