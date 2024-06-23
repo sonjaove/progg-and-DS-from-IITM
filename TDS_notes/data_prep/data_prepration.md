@@ -33,6 +33,62 @@ df.to_csv('population.csv')
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------
 
+# Excel:
+- [using data cleaing using excel](https://youtu.be/7du7xkqeu4s?si=GwTV5RGto-GEBC3F)
+    1. you can use `find and replace` (ctrl+H) to replace some of the unwanted texts, or words from any of your data column.
+    2. you can also change the data types(data formates) form the home ribbon in excel.
+
+- [Data transformation in Excel](https://youtu.be/gR2IY5Naja0)
+
+- [Convert text-to-columns in Excel (kinda like split function in pyhton)](https://youtu.be/fQeADnqiOAg)
+
+- [Data aggregation in Excel](https://youtu.be/NkpT0dDU8Y4)
+
+- home ribbon &rarr; `find and select` &rarr; `go to special` &rarr; that is where you figure out a empty cell in your entire column and then delete it by right clicking on the selected cells.
+
+- home ribbon &rarr; `conditional formatting` &rarr; fiddle around around with colors and options to get color in your column or data bar &rarr; see the clusters in the data.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+# Shell.
+
+- The commands written in shell powerful and fast, and can be parallalized and are pretty popular, and also available in platforms like colab or jyup notebook.
+
+- the commands on the jyup notebook are written with a ! ahead of them. 
+
+- the code has been done on the notes_shell file
+
+- list of commands 
+    
+```shell
+gzip -d data_apr.gz #unzip the data
+
+head -n data_apr #gives the first 5 entries of the file.
+
+wc  data_apr # would give me the 1. total numebr of lines 2. words and chars 
+
+wc -l data_apr #would only give 1. 
+
+# in context to our data, the lines corresponds to number of requests made to the website.
+# for getting all the IPs (1st column of the logs) we use the cut command
+
+cut --delimeter " " --fields 1 | head -n 25 #here it is space, and we want first field, and the pipe will pass the output of the first command into the second.
+
+cut --delimeter " " --fields 1 | sort | uniq --count # will count the repeating values of unique ips
+
+#one intresting case comes up while inspecting the logs is that, we see one ip sending about half the total requests (100000), and upon inspecing we find that its prolly a bot, to confirm we use grep
+
+grep "^136.243.228.193" data_apr #grep searches for regular expression - mech of wildcarts to search for content.
+# a bor 
+
+#performing the same operation for another ip, which too turns out to be a bot, 
+
+
+```
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
 # References:
 - [datacamp tutorials](https://www.datacamp.com/community/tutorials/tutorial-on-scraping-data-from-a-website)
 - [geeks for geeks tutorial](https://www.geeksforgeeks.org/implementing-web-scraping-python-beautiful-soup/)
@@ -43,3 +99,14 @@ pdftotext -layout gujarat-2013.pdf gujarat-2013.txt
 
 - [general election parsing colab](https://colab.research.google.com/drive/1SP8yVxzmofQO48-yXF3rujqWk2iM0KSl)
 
+- [one good video](https://youtu.be/dF3zchJJKqk?si=Q1HndBQF06frUqan)
+
+- [cartogram is something very ineresting](https://gramener.com/election/cartogram?ST_NAME=Tamil%20Nadu)
+
+- strucutre of internet logs used here:
+
+    | IP Address  | Identity of the Client (identD) | Username/User ID | Date/Time                      | Request                             | Status Code | Bytes Sent |
+    |-------------|---------------------------------|------------------|--------------------------------|-------------------------------------|-------------|------------|
+    | 127.0.0.1   | -                               | frank            | [10/Oct/2000:13:55:36 -0700]   | "GET /apache_pb.gif HTTP/1.0"       | 200         | 2326       |
+
+- learn about regular expressions.
