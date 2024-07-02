@@ -21,7 +21,7 @@
 ---
 
 ## Python
-
+### With parquet file.
 - Parquet is a file format like Excel or CSV, but is fast, small, and great for analysis. 
 ```python
 #reading a parquet file
@@ -82,6 +82,66 @@ plt.ylabel('Hour of Day')
 plt.show()
 ```
 ![the heatmap of correlation](image-1.png)
+
+### With databases.
+
+- the way to access the database is to query it using SQL, using pandas and sqlalchemy
+```python
+import pandas as pd
+import sqlalchemy as sa
+import numpy as np
+
+engine = sa.create_engine("mysql+pymysql://guest:relational@db.relational-data.org/stats")
+pd.read_sql('SELECT COUNT(*) FROM posts', engine)
+
+def query(sql):
+    return pd.read_sql(sql, engine)
+stats_query = """
+SELECT
+    COUNT(*) as n,
+    AVG(Age) as avg_age,
+    AVG(Reputation) as avg_reputation,
+    SUM(Age * Reputation) as sum_age_reputation,
+    SUM(Age * Age) as sum_age_age,
+    SUM(Reputation * Reputation) as sum_reputation_reputation
+FROM
+    users
+WHERE
+    Age IS NOT NULL AND Reputation IS NOT NULL
+"""
+
+stats = query(stats_query)
+
+# manual calculation of pearson correlation
+# Extract the aggregated values from the DataFrame
+n = stats["n"].iloc[0]
+avg_age = stats["avg_age"].iloc[0]
+avg_reputation = stats["avg_reputation"].iloc[0]
+sum_age_reputation = stats["sum_age_reputation"].iloc[0]
+sum_age_age = stats["sum_age_age"].iloc[0]
+sum_reputation_reputation = stats["sum_reputation_reputation"].iloc[0]
+
+# Calculate the Pearson correlation coefficient
+numerator = sum_age_reputation - n * avg_age * avg_reputation
+denominator = np.sqrt(
+    (sum_age_age - n * avg_age**2) * (sum_reputation_reputation - n * avg_reputation**2)
+)
+
+if denominator != 0:
+    pearson_correlation = numerator / denominator
+else:
+    pearson_correlation = np.nan  # Handle division by zero if it occurs
+
+print(f"Pearson correlation coefficient: {pearson_correlation}")
+```
+
+- **SQL is a ANALYTICS tool too**
+
+- SQLite is a database-in-a-file. If you get a SQLite database file (e.g. data.db), you can connect to it using the SQLAlchemy string:
+```python
+# Assume data.db is in the current directory and has a table named "tablename"
+engine = sa.create_engine("sqlite:///data.db/tablename")
+```
 ---
 
 Refrences:
