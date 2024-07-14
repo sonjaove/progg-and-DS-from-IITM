@@ -55,6 +55,8 @@ def get_sentiment(review, debug=False):
 
 ## LLM Extraction.
 
+- We use AI to do json extracion persay so that, we can basically reduce the use of softwares like OpenRefine and stuff or we particularly don't have to pay heavy prices for things like that which somewhat automates the process.
+
 ---
 ## Refrences:
 
@@ -69,6 +71,6 @@ def get_sentiment(review, debug=False):
 
     so this becomes a potential to store your api keys temporarily  
 
-- [the colab notebook](https://colab.research.google.com/drive/1tVZBD9PKto1kPmVJFNUt0tdzT5EmLLWs#scrollTo=31N3ljM0qjlC)
+- [the colab notebook for sentimental analysis](https://colab.research.google.com/drive/1tVZBD9PKto1kPmVJFNUt0tdzT5EmLLWs#scrollTo=31N3ljM0qjlC)
 
 - [OpneAI playground](https://platform.openai.com/playground/chat)
