@@ -56,11 +56,28 @@ def get_sentiment(review, debug=False):
 ## LLM Extraction.
 
 - We use AI to do json extracion persay so that, we can basically reduce the use of softwares like OpenRefine and stuff or we particularly don't have to pay heavy prices for things like that which somewhat automates the process.
+* JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
+* It provides a way to describe the structure and constraints of JSON data.
+* With JSON Schema, you can define the expected properties, types, and formats of the data,
+* ensuring that it conforms to a specific schema.
+* This helps in ensuring data consistency and interoperability between different systems.
+
+- [is it possible that LLM is not able to retrive any field form a given schema ? i dont see though why would it not be able to(given the fact that model is well trained), until and unless any kind of specific condition is mentioned](https://youtu.be/72514uGffPE?si=_UObj08WX9pJ0VTP&t=1800)
+---
+
+## LLM topic modeling.
+
+- the LLM converts the text given to it to numbers and somolar numbers have similar weights, the LLM conerts the input to an array of numbers (vectors in multidimensional space), if 2 vectors are close by then that means they have similar ***embedding*** or to say the words close to each other have similar meaning, you can visualizie this using [tensorflow projector](https://projector.tensorflow.org/)
+
+- earlier vectorization of words was pretty simple, a sentence would be a serries of 0s and 1s based on a the dictinoary of words given, so the word or a piece of text would actually be a vector in n dimensions, but eventually it became more concept based i.e what the word means and stuff.
+
+- current LLMs are almost entirely in concept space. 
+
 
 ---
 ## Refrences:
 
-- [OpenAI docs(for using the API key)](https://github.com/sanand0/aiproxy)
+- [docs for using the API key](https://github.com/sanand0/aiproxy)
 
 - There is a section in google colab called `userdata` which has the option of kepping some things secret, and you would have to write 
 
@@ -73,4 +90,9 @@ def get_sentiment(review, debug=False):
 
 - [the colab notebook for sentimental analysis](https://colab.research.google.com/drive/1tVZBD9PKto1kPmVJFNUt0tdzT5EmLLWs#scrollTo=31N3ljM0qjlC)
 
-- [OpneAI playground](https://platform.openai.com/playground/chat)
+- [colab notebook for extraction](https://colab.research.google.com/drive/1Z8mG-RPTSYY4qwkoNdzRTc4StbnwOXeE#scrollTo=pahJEt2kvL7v)
+
+- [JSON Schema](https://json-schema.org/learn/getting-started-step-by-step)
+
+- [OpneAI playground](https://platform.openai.com/playground/chat), [openAI API refs](https://platform.openai.com/docs/api-reference/) and [openAI docs](https://platform.openai.com/docs/overview)
+
