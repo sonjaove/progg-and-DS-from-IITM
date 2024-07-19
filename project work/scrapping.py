@@ -52,9 +52,10 @@ def main():
     html_content = fetch_data(url)
     
     if not html_content:
+        print("Exiting program...")
         return
     
     analyze_html_structure(html_content)
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     main()
