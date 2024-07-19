@@ -69,15 +69,25 @@ def get_sentiment(review, debug=False):
 
 - the LLM converts the text given to it to numbers and somolar numbers have similar weights, the LLM conerts the input to an array of numbers (vectors in multidimensional space), if 2 vectors are close by then that means they have similar ***embedding*** or to say the words close to each other have similar meaning, you can visualizie this using [tensorflow projector](https://projector.tensorflow.org/)
 
-- earlier vectorization of words was pretty simple, a sentence would be a serries of 0s and 1s based on a the dictinoary of words given, so the word or a piece of text would actually be a vector in n dimensions, but eventually it became more concept based i.e what the word means and stuff.
+- earlier vectorization of words was pretty simple, a sentence would be a serries of 0s and 1s based on a the dictinoary of words given, so the word or a piece of text would actually be a vector in n dimensions, but eventually it became more concept based i.e what the word means and stuff, and if you want to see the **distance** betweeen them, just find the ***dot product*** between the vectors of the words/sentenecs.
 
 - current LLMs are almost entirely in concept space. 
 
+- once you get the embeddings of a word you can then perform clustering using any clustering algorithm to clusrer them together. 
+
+- you can also create embeddings of the topics to which the particular word belongs to as well.
+---
+
+## Retrieval Augmented Generation
+
+- The technique of retrieving and using relevant documents to enhance model responses.
+
+- similarity search also helps in getting accurate repsonses from the output of a model, as it means to find the most relevant documents by calculating cosine similarity between embeddings
 
 ---
 ## Refrences:
 
-- [docs for using the API key](https://github.com/sanand0/aiproxy)
+- [OpneAI playground](https://platform.openai.com/playground/chat), [openAI API refs](https://platform.openai.com/docs/api-reference/) and [openAI docs](https://platform.openai.com/docs/overview)
 
 - There is a section in google colab called `userdata` which has the option of kepping some things secret, and you would have to write 
 
@@ -92,7 +102,12 @@ def get_sentiment(review, debug=False):
 
 - [colab notebook for extraction](https://colab.research.google.com/drive/1Z8mG-RPTSYY4qwkoNdzRTc4StbnwOXeE#scrollTo=pahJEt2kvL7v)
 
+- [colab notebook for topic modeling](https://colab.research.google.com/drive/15L075RLrwXkxa29EGT-1sNm_dqJRBTe_)
+
 - [JSON Schema](https://json-schema.org/learn/getting-started-step-by-step)
 
-- [OpneAI playground](https://platform.openai.com/playground/chat), [openAI API refs](https://platform.openai.com/docs/api-reference/) and [openAI docs](https://platform.openai.com/docs/overview)
+- [embedding model rankings](https://huggingface.co/spaces/mteb/leaderboard)
 
+-[gte-large-en-v1.5 embedding model](https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5)
+
+- [Awesome vector database](https://github.com/mileszim/awesome-vector-database)
