@@ -1,61 +1,36 @@
 import requests
-from bs4 import BeautifulSoup
+import re
+import json
+import pandas as pd
+from urllib.parse import urlencode
 
-def fetch_data(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.text
-    else:
-        print(f"Failed to fetch data from {url}. Status code: {response.status_code}")
-        return None
 
-def analyze_html_structure(html_content):
-    soup = BeautifulSoup(html_content, 'html.parser')
-    
-    print("1. Document Title:")
-    print(soup.title.string if soup.title else "No title found")
-    
-    print("\n2. First 500 characters of the HTML:")
-    print(html_content[:500])
-    
-    print("\n3. All script tags:")
-    for i, script in enumerate(soup.find_all('script')):
-        print(f"Script {i + 1}:")
-        print(script.get('src', 'No src attribute'))
-        if script.string:
-            print(script.string[:100] + "..." if len(script.string) > 100 else script.string)
-        print()
-    
-    print("\n4. Searching for div with class 't':")
-    t_divs = soup.find_all('div', class_='t')
-    print(f"Number of 't' divs found: {len(t_divs)}")
-    if t_divs:
-        print("First 't' div content:")
-        print(t_divs[0].prettify()[:500])
-    
-    print("\n5. Searching for div with class 'r':")
-    r_divs = soup.find_all('div', class_='r')
-    print(f"Number of 'r' divs found: {len(r_divs)}")
-    if r_divs:
-        print("First 'r' div content:")
-        print(r_divs[0].prettify()[:500])
-    
-    print("\n6. Searching for div with class 'c':")
-    c_divs = soup.find_all('div', class_='c')
-    print(f"Number of 'c' divs found: {len(c_divs)}")
-    if c_divs:
-        print("First 'c' div content:")
-        print(c_divs[0].prettify()[:500])
+base_url='https://22f3001919.github.io/tds_project_1/index-BMuYwVbw.html'
 
-def main():
-    url = "https://22f3001919.github.io/tds_project_1/"
-    html_content = fetch_data(url)
-    
-    if not html_content:
-        print("Exiting program...")
-        return
-    
-    analyze_html_structure(html_content)
+st_name='KERALA'
 
-if __name__ == "_main_":
-    main()
+params={
+    'st_name':st_name
+}
+url=f"{base_url}?{urlencode(params)}"
+
+# Step 1: Fetch the HTML content from the URL
+response = requests.get(url)
+html_content = response.text
+
+# Step 2: Extract the JavaScript variable `const data` from the HTML
+pattern = re.compile(r'const data = (\[.*?\]);', re.DOTALL)
+match = pattern.search(html_content)
+
+if match:
+    json_data = match.group(1)
+    # Step 3: Convert the extracted JSON data into a pandas DataFrame
+    data_list = json.loads(json_data)
+    df = pd.DataFrame(data_list)
+    link_df=df[df['ST_NAME'] == 'KERALA']
+    #df_k=df[df['AC'] == 'KARUNAGAPALLY']
+    #df_k.to_csv('project1_data.csv',index=False)
+    #print("sheet saved")
+    print(link_df.head())  # Display the first few rows of the DataFrame
+else:
+    print("JavaScript variable 'const data' not found.")
