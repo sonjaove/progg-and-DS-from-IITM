@@ -97,12 +97,15 @@ pip install beautifulsoup4 requests
 
 1. [the colab notebook demonstrating just the use of the libraires](https://colab.research.google.com/drive/1-iV-tbtRicKR_HXWeu4Hi5aXJCV3QdQp#scrollTo=KEiuQasXBhal)
 2. [the colab notebook that does the scraping nd processing the data](https://colab.research.google.com/drive/1-gkMzE-TKe3U_yh1v0NPn4TM687H2Hcf)
+3. [colab notebook for nominatim](https://colab.research.google.com/drive/1-vvP-UyMjHgBqc-hdsUhm3Bsbgi7oO6g)
 
 - A few more resources:
 
 1. [requests package in py](https://www.youtube.com/watch?v=tb8gHvYlCFs)
 2. [tutorial for beautiful soup package](https://youtu.be/ng2o98k983k)
 3. [re package](https://youtu.be/K8L6KVGG-7o)
+4. [nominatim package](https://nominatim.org/release-docs/develop/api/Overview/)
+5. [geopy and geocoders](https://geopy.readthedocs.io/)
 
 ## 4. with JS:
 
