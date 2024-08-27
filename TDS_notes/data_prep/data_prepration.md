@@ -1,16 +1,12 @@
 # Generic points.
-- some websites such as 
-
-    👉 https://www.ncei.noaa.gov/data/precipitation-persiann/access/
-
-    have ***indexed data***, which makes data scraping form the websites very easy and doable on the other hand, there is unindexed datasets, where you have to individually select the attributes you want.
+- some internet archives have ***indexed data***, which makes data scraping form the websites very easy and doable on the other hand, there is unindexed datasets, where you have to individually select the attributes you want.
 
 - some pdfs with official data, can also be very structured in and makes their scraping very easy, eg the election result data. 
-
+---
 # General procedure:
-1. open the wesite, and inspect different elements of it and see where your data lies &rarr; send a GET request to this page, and use soup to extract the given element &rarr; add a try and except block as well &rarr; you would have to use a loop to extract the entire data, if your data is in multiple pages. &rarr; save the pdf file
+1. open the wesite, and inspect different elements of it and see where your data lies &rarr; send a GET request to this page, and use ```soup``` to extract the given element &rarr; add a try and except block as well &rarr; you would have to use a loop to extract the entire data, if your data is in multiple pages. &rarr; save the pdf file
 
-2. convert the saved file into txt files (use the xpdf library, command given below) &rarr; 
+2. convert the saved file into txt files (use the xpdf library, command given below)
 # Tools:
 - **BeautifulSoup** is a python library that is used to scrape data from websites, it creates a parse tree for parsing HTML and XML documents.
 - **requests** is a python library that is used to send HTTP requests.
@@ -79,19 +75,18 @@ cut --delimeter " " --fields 1 | sort | uniq --count # will count the repeating 
 #one intresting case comes up while inspecting the logs is that, we see one ip sending about half the total requests (100000), and upon inspecing we find that its prolly a bot, to confirm we use grep
 
 grep "^136.243.228.193" data_apr #grep searches for regular expression - mech of wildcarts to search for content.
-# a bor 
 
 #performing the same operation for another ip, which too turns out to be a bot, 
 
 
 ```
 
-- [notebook which does a fair job at explaining things.](https://colab.research.google.com/drive/1KSFkQDK0v__XWaAaHKeQuIAwYV0dkTe8)
+- [notebook which does a better job at explaining things.](https://colab.research.google.com/drive/1KSFkQDK0v__XWaAaHKeQuIAwYV0dkTe8)
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 # text editor 
 
-- ctrl+shift+p - for fomatting a jason file, as vs code can identify the formates like these.
+- ctrl+shift+p - for fomatting a json file, as VS code can identify the formates like these.
 
 - ctrl + d =  multi-select 
 
@@ -130,7 +125,7 @@ grep "^136.243.228.193" data_apr #grep searches for regular expression - mech of
 
     - makes the image porcessing easy, just write a script for the images and the changes in the images will be done. 
 
-    - it can alos be pretty useful for data visulaization. 
+    - it can also be pretty useful for data visulaization. 
     ```python
     # for installing the library
     pip install Pillow #this does it, but you might need some external libraries as well, incase an error accures during installation.
@@ -170,7 +165,7 @@ grep "^136.243.228.193" data_apr #grep searches for regular expression - mech of
 - [datacamp tutorials](https://www.datacamp.com/community/tutorials/tutorial-on-scraping-data-from-a-website)
 - [geeks for geeks tutorial](https://www.geeksforgeeks.org/implementing-web-scraping-python-beautiful-soup/)
 ```python
-#comand for converting pdf to txt
+#comand for converting pdf to txt in python.
 pdftotext -layout gujarat-2013.pdf gujarat-2013.txt
 ```
 
