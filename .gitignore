@@ -3,3 +3,4 @@ __pycache__/
 kerela.pkl
 project data/
 ROE data/
+*.png
