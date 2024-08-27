@@ -1,12 +1,13 @@
 '''requests library is used to send HTTP requests to the server and the html code is parsed using BeautifulSoup, some other libraries used are:
 json, re, os, sys, time, datetime, argparse, urllib, urllib3, requests, bs4, and lxml.
+
 json stands for JavaScript Object Notation, it is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. 
 this the simlpest way to get the data of the desired city, by simply copy pasting the url='https://www.bbc.com/weather/2643743' of that city, in this case bhopal
 and then call the get function of the requests library to get the data of the city.
 '''
 '''there is also another libraray called scrapy which is more efficeint than BeautifulSoup, it is a web crawling framework that provides a complete tool for scraping.
 but it is more complex than BeautifulSoup, it is used to extract the data from the websites, it is a high-level web crawling and web scraping framework used to crawl websites and extract structured data from their pages.
-ive implimented the code in one of the private repo.'''
+'''
 
 import requests
 import json
@@ -20,7 +21,7 @@ import pandas as pd
 req_city = 'bhopal'
 
 # Create the API URL with the correct parameters
-api_key = 'e77044246c444d5f9b872624241906'
+api_key = 'your_api_key'
 base_url = 'http://api.weatherapi.com/v1/current.json'
 params = {
     'key': api_key,
