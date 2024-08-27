@@ -42,7 +42,10 @@ def get_sentiment(review, debug=False):
     return answer
 ```
 
-    this code, would mean that you are simply asking the model, without any training and simply asking, we could also train it and customize it.
+- this code, would mean that you are simply asking the model, without any training and simply asking, we could also train it and customize it.
+
+- you would actaully have to go through the response you get and convert it to json and then extract the given data.
+
 
 - Zero-Shot, One-Shot, and Multi-Shot Learning: paradigms in machine learning and artificial intelligence that describe how models are trained and tested with limited examples
 
@@ -55,7 +58,7 @@ def get_sentiment(review, debug=False):
 
 ## LLM Extraction.
 
-- We use AI to do json extracion persay so that, we can basically reduce the use of softwares like OpenRefine and stuff or we particularly don't have to pay heavy prices for things like that which somewhat automates the process.
+- We use AI to do json extracion persay so that, we can basically reduce the use of softwares like OpenRefine and stuff or we particularly don't have to pay heavy prices for things like that, which somewhat automates the process.
 * JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
 * It provides a way to describe the structure and constraints of JSON data.
 * With JSON Schema, you can define the expected properties, types, and formats of the data,
@@ -108,6 +111,6 @@ def get_sentiment(review, debug=False):
 
 - [embedding model rankings](https://huggingface.co/spaces/mteb/leaderboard)
 
--[gte-large-en-v1.5 embedding model](https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5)
+- [gte-large-en-v1.5 embedding model](https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5)
 
 - [Awesome vector database](https://github.com/mileszim/awesome-vector-database)
