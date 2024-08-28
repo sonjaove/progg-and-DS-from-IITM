@@ -46,8 +46,7 @@
 # Network analysis 
 - the sk learn network library will be used here. 
 
-
-
+- [notebook for network analysis](https://colab.research.google.com/drive/1VRlAOfREGwflv7v2VmN-6O_wqRno4Xcq?usp=sharing)
 ---
 ## References:
 1. [folium](https://python-visualization.github.io/folium/latest/)
@@ -55,3 +54,7 @@
 2. [QGIS software](https://www.qgis.org/)
 
 3. [sklearn network library](https://scikit-network.readthedocs.io/en/latest/use_cases/votes.html)
+
+4. [kumu](https://youtu.be/fwiz7PnipgQ)
+
+5. [working with kumu](https://docs.kumu.io/guides/disciplines/sna-network-mapping)
