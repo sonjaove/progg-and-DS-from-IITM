@@ -5,3 +5,5 @@ project data/
 ROE data/
 *.png
 *.gz
+*.parquet
+*.csv
