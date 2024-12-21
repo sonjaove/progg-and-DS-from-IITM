@@ -53,7 +53,7 @@ by 5, and the training loop continues.
 The algorithm stops when the learning rate goes below 10^-6 .
 '''
 ```
-- SGD converges after observing approximately 10^6 training samples. Thus, a reasonable first guess for the number of iterations for sampled training set is ***max_iter = np.ceil(10 /n)***
+- SGD converges after observing approximately 10^6 training samples. Thus, a reasonable first guess for the number of iterations for sampled training set is ***max_iter = np.ceil(10^6/n)***
 - Averaged SGD updates the weight vector to average of weights from previous updates, works best with a larger number of features and a higher eta0
 - monitering loss:
     - use for loop.
