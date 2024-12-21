@@ -3,13 +3,13 @@
 1. stratified sampling vs random smapling 
 2. EDA can be performed after splitting as well simply on the train set.
 3. Exploration is an iterative process: Once we build model and obtain more insights, we can come back to this step.
-
 4. min-max scalling(bounds the values between 0 and 1, while variance is <1 ) is different from standard scalling(does not bound the values between 0 and 1, varience = 1).
 5. ***Never learn these transformers on the full dataset.***
-6.  We can use cross-validation (CV) for robust evaluation of model performance.
+6. We can use cross-validation (CV) for robust evaluation of model performance.
 7. Cross validation provides a separate MSE for each validation set, which we can use to get a mean estimation of MSE as well as the standard deviation, which helps us to determine how precise is the estimate.
 8. select and trian your model first, analyze the validation scores and then for hyperparameter tunning use GridSearchCV.
 9. It's a good idea to get 95% confidence interval of the evaluation metric. It can be obtained by the following code:
+
 ```python
     from scipy import stats
     confidence = 0.95
@@ -18,11 +18,12 @@
     loc=squared_errors.mean(),
     scale=stats.sem(squared_errors))
 ```
---- 
+
+---
 
 ## Pipeline 
 
-1.  Pipeline has a sequence of transformations eg - missing value imputation followed by standardization.
+1. Pipeline has a sequence of transformations eg - missing value imputation followed by standardization.
 2. It takes a list of ('estimatorName',estimator(...)) tuples.The pipeline object exposes interface of the last step.
 ```py
 estimators = [
@@ -100,6 +101,8 @@ print(X_new)
     3. **Feature reduction** - essentially means reducing data to a lower dimenssion feature space.
         - [PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html) is used for this, which comes under Unsupervised ML. It uses singular value decomposition (SVD) to project the feature matrix or data to a lower dimensional space.
         - The first principle component (PC) is in the direction of maximum variance in the data. It captures bulk of the variance in the data. 
+        - [or using any other technique that performs data embeddings](https://scikit-learn.org/stable/api/sklearn.manifold.html)
+        - for more info can refere to [this section](https://scikit-learn.org/stable/modules/manifold.html#manifold) of ***Unsupervised learning***
 
     4. **Feature expansion** - essentially means moving data to a higher dimenssion feature space.
 
