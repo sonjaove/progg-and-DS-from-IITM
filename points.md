@@ -88,6 +88,20 @@ Here's a clean table summarizing **searching** and **sorting algorithms**, inclu
     - Enumerate $V = {0, 1, . . . , n − 1}$ such that for any $(i, j) ∈ E$, $i$ appears before $j$
     - A graph with directed cycles cannot be sorted topologically, but Every DAG can be topologically sorted
 - we compute longest path after topological sorting, and would it be unique, do we need uniqness? 
+- BFS computes shortest path, in terms of number of edges, to every reachable vertex
+    - Each new shortest path we discover extends an earlier one
+- A tree on $n$ vertices has exactly $n − 1$ edges
+- Adding an edge to a tree must create a cycle.
+- In a tree, every pair of vertices is connected by a unique path.
+- Any two of the following facts about a graph $G$ implies the third
+    1. $G$ is connected
+    1. $G$ is acyclic
+    1. $G$ has $ n − 1$ edges
+- **Minimum seprator lemma**
+    - Let $V$ be partitioned into two non-empty sets $U$ and $W = V \setminus U$
+    - Let $e = (u,w)$ be the minimum cost edge with $u ∈ U, w ∈ W$
+    - Every MCST must include $e$
+- If edge weights repeat, MCST is not unique
 ---
 Here's a detailed comparison table listing the **time complexities** of various graph algorithms — **Dijkstra's**, **Floyd-Warshall**, **Bellman-Ford**, **Prim's**, **Kruskal's**, **BFS**, and **DFS** — with respect to:
 - **Naive implementation**
@@ -115,6 +129,23 @@ Here's a detailed comparison table listing the **time complexities** of various 
 - Algorithms like Dijkstra’s and Prim’s benefit greatly from **heaps** for performance.
 - Kruskal’s bottleneck is **sorting the edges** and managing **union-find** efficiently.
 - BFS/DFS are linear in list form but become  $O(V^2)$  with matrix due to scanning all possible edges.
+- If Bellman-Ford algorithm does not converge after $n − 1$ iterations, there is a negative cycle
 ---
 
 <!-- Let me know if you want a printable/markdown version of this. -->
+- BSTs:
+    1. All values in the left subtree are $ < v$ i.e Minimum is left most node in the tree
+    1. All values in the left subtree are $> v$ i.e Maximum is right most node in the tree
+    1. Each node has a value and pointers to its children
+- General strategy to build a small balanced tree of height h:
+    - Smallest balanced tree of height $h − 1$ as left subtree
+    - Smallest balanced tree of height $h − 2$ as right subtree
+    - Slope of a node : self.left.height() - self.right.height(), Balanced tree — slope is ${−1, 0, 1}$, if the tree is not balanced perform rotations.
+- DP and Greedy algos
+- Regular expressions:
+    1. To match the start of the string, write $ˆp$
+    2. To match the end of the string, write $p$ $
+    3. ˆbana$ does not match banana, but $ˆba(na)^+$ does, this means that the string in between must only contain more $(na)$ and nothing else. To modify it we can write $ˆba(na)^+.*na$ then we can have any string that would match the pattern bananananan123na or anything else.
+- Linear programming :
+    - Feasible region is convex
+    
