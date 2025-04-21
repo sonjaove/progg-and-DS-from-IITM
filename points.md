@@ -135,7 +135,7 @@ Here's a detailed comparison table listing the **time complexities** of various 
 <!-- Let me know if you want a printable/markdown version of this. -->
 - BSTs:
     1. All values in the left subtree are $ < v$ i.e Minimum is left most node in the tree
-    1. All values in the left subtree are $> v$ i.e Maximum is right most node in the tree
+    1. All values in the right subtree are $> v$ i.e Maximum is right most node in the tree
     1. Each node has a value and pointers to its children
 - General strategy to build a small balanced tree of height h:
     - Smallest balanced tree of height $h − 1$ as left subtree
@@ -148,4 +148,23 @@ Here's a detailed comparison table listing the **time complexities** of various 
     3. ˆbana$ does not match banana, but $ˆba(na)^+$ does, this means that the string in between must only contain more $(na)$ and nothing else. To modify it we can write $ˆba(na)^+.*na$ then we can have any string that would match the pattern bananananan123na or anything else.
 - Linear programming :
     - Feasible region is convex
-    
+---
+# Abstraction of the course (i.e solving a problem at hand).
+
+| Paradigm            | Algorithms                              | Optimal Data Structures         | Notes                                                       |
+|---------------------|------------------------------------------|----------------------------------|--------------------------------------------------------------|
+| **Divide & Conquer**| Merge Sort                               | Arrays                           | Divides array, recursively sorts and merges                  |
+|                     | Quick Sort                               | Arrays                           | Partitions using pivot, sorts subarrays                      |
+|                     | Heap Sort                                | Binary Heap (Array-based)        | Uses max heap to sort                                        |
+|                     | Binary Search                            | Sorted Arrays                    | Divides array to search efficiently                          |
+|                     | Ternary Search                           | Sorted Arrays                    | Like binary, but splits into 3 parts                         |
+| **Greedy**          | Selection Sort                           | Arrays                           | Repeatedly selects min element                               |
+|                     | Insertion Sort                           | Arrays                           | Builds sorted array one element at a time                   |
+|                     | Counting Sort                            | Arrays + Count Array             | Assumes known range of keys                                 |
+|                     | Radix Sort                               | Arrays + Buckets (queues)        | Sorts digits by place (uses counting sort inside)           |
+|                     | Bucket Sort                              | Arrays + Linked Lists/Buckets    | Divides elements into buckets, sorts individually           |
+| **Dynamic Programming** | Longest Increasing Subsequence (LIS) | Arrays + DP table or Binary Search | DP: $O(n²)$, Optimized: $O(n \log n)$                        |
+|                     | Optimal Binary Search Tree               | 2D DP Table                      | Computes min-cost BST from frequencies                      |
+| **Naive / Brute Force** | Bubble Sort                          | Arrays                           | Swaps adjacent if out of order                              |
+|                     | Linear Search                            | Arrays/Lists                     | Checks each element one by one                              |
+|                     | Exponential Search                       | Sorted Arrays                    | Combines binary search + exponential step                   |
