@@ -3,7 +3,7 @@ __pycache__/
 kerela.pkl
 project data/
 ROE data/
-*.png
+# *.png
 *.gz
 *.parquet
 *.csv
