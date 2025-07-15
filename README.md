@@ -1,1 +1,1 @@
-## this branch consists of files of implimentation of unsupervised learning algorithms taught in the course MLT.
+# this branch consists of notes/files for the BDM course and its capstone project.
