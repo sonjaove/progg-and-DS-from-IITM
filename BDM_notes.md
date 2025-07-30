@@ -95,4 +95,26 @@
     - Internal shows how you're doing; external shows how the world around you is doing. These external sources help compare your performance with competitors or industry standards.
 
 > - The only tool we will use is a spreadsheet
+## Ecommerce case study:
+    - the analysis cerncerned was along with the tools/functions used:
+        1. volume of the SKU sold - simple filtering
+        2. pareto analysis of the volume - arrange the goods form smallest to heighest, and then keep cumulating and then find out the percentage, a default pareto chart is also given by excel
+        3. inventory calculations - uses vlookup, if, avgif, countif, etc etc
+        4. sale qunatity i.e the revenue - pivot table analysis.
+
+
+### list of excel functions/methods used by far:
+1. filtering
+2. paste special
+3. pivot tables 
+4. charts 
+5. vlookup 
+6. if 
+7. avgif
+8. sum
+9. countif
+10. iferror 
+11. whatif analysis (goal seek)
+12. 
+
 
