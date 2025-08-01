@@ -102,6 +102,7 @@
         3. inventory calculations - uses vlookup, if, avgif, countif, etc etc
         4. sale qunatity i.e the revenue - pivot table analysis.
 
+- [safety stock calculation, reorder point](https://youtu.be/8bi6P2IS-vE?t=557)
 
 ### list of excel functions/methods used by far:
 1. filtering
@@ -115,6 +116,6 @@
 9. countif
 10. iferror 
 11. whatif analysis (goal seek)
-12. 
+12. offset
 
 
