@@ -116,6 +116,6 @@
 9. countif
 10. iferror 
 11. whatif analysis (goal seek)
-12. offset
+12. [offset](https://youtu.be/4AlI4KTAt4I?si=-cEti4lI7vjArhAE&t=632)
 
 
